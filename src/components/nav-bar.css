@@ -1,0 +1,69 @@
+.nav-bar-container {
+  width: 20vw;
+  height: 100%;
+  background-color: #eee;
+  padding: 1.5rem;
+}
+
+.nav-bar-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+}
+
+.search-icon-container {
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.fa-search {
+  color: gray;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.nav-bar-title {
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.tasks-types-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.tasks-types-list-item-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.tasks-types-list-item-container:hover {
+  background-color: #ccc;
+}
+
+.nav-bar-list-icons {
+  font-size: 1.5em;
+  margin-right: 1rem;
+}
