@@ -1,0 +1,39 @@
+.main-section {
+  width: 80vw;
+}
+
+.main-section-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.main-section-header-title-container {
+  padding: 0 2rem;
+}
+
+.main-section-header-title {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.main-section-header-add-task-container {
+  padding: 0 2rem;
+}
+
+.add-task-btn {
+  padding: 0.5rem 1.2rem;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-task-btn:hover {
+  filter: brightness(95%);
+}

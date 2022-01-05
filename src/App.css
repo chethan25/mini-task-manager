@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --main-color: #c38d9e;
+  --secondary-color: #eee;
+}
 
 *,
 *::before,
@@ -8,7 +13,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .app-container {
@@ -16,13 +21,17 @@ body {
 }
 
 .header-container {
-  background-color: #c38d9e;
+  background-color: var(--main-color);
   color: #fff;
   padding: 1.5rem;
 }
 
 .header-title {
   font-size: 1.8em;
-  letter-spacing: 0.5px;
   margin-left: 1rem;
+}
+
+.section-container {
+  display: flex;
+  height: 100vh;
 }

@@ -20,7 +20,7 @@ const Navbar = () => {
           placeholder="Search tasks"
         />
       </form>
-      <h4 className="nav-bar-title">Navigation</h4>
+      <h4 className="nav-bar-title">Your Tasks</h4>
       <ul className="tasks-types-list">
         <div className="tasks-types-list-item-container">
           <FaTasks className="nav-bar-list-icons" />
