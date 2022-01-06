@@ -26,7 +26,15 @@ const MainSection = ({ tasks, users, isLoading }) => {
           ) : (
             tasks.map((task) => (
               <li key={task.id}>
-                <div className="task-container">
+                <div
+                  className={
+                    (task.priority === '3'
+                      ? 'high-priority'
+                      : task.priority === '2'
+                      ? 'mid-priority'
+                      : 'low-priority') + ' task-container'
+                  }
+                >
                   <p className="task-message-text">{task.message}</p>
                   <p className="task-assigned-text">
                     {users.find((user) => user.id === task.assigned_to)

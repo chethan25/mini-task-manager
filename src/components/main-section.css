@@ -68,6 +68,18 @@
   transition: all 0.2s ease-out;
 }
 
+.high-priority {
+  border-left: 3px solid red;
+}
+
+.mid-priority {
+  border-left: 3px solid orange;
+}
+
+.low-priority {
+  border-left: 3px solid green;
+}
+
 .task-message-text {
   width: 55%;
   color: var(--primary-text-color);
