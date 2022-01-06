@@ -1,5 +1,7 @@
 .main-section {
   width: 80vw;
+  height: 90vh;
+  background-color: #f7f7f7;
 }
 
 .main-section-header-container {
@@ -36,4 +38,65 @@
 
 .add-task-btn:hover {
   filter: brightness(95%);
+}
+
+.main-section-tasks-container {
+  margin: 2rem 3rem;
+  max-height: 100%;
+  position: relative;
+}
+
+.tasks-list {
+  overflow-y: auto;
+  height: 70vh;
+  list-style: none;
+  padding: 0;
+}
+
+.task-container {
+  background-color: #eee;
+  margin-bottom: 1rem;
+  margin-right: 3rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-container:hover {
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-out;
+}
+
+.task-message-text {
+  width: 55%;
+  color: var(--primary-text-color);
+}
+
+.task-assigned-text {
+  min-width: 8%;
+}
+
+.due-date-text {
+  width: 12%;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.action-icons {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.action-icons :hover {
+  color: #3ba395;
+}
+
+.tail-spin-loader-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  margin-top: 100px;
 }

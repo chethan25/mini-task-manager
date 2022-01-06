@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
   --main-color: #c38d9e;
   --secondary-color: #eee;
+  --primary-text-color: #501f3a;
 }
 
 *,
@@ -23,7 +24,8 @@ body {
 .header-container {
   background-color: var(--main-color);
   color: #fff;
-  padding: 1.5rem;
+  padding: 1.2rem;
+  height: 75px;
 }
 
 .header-title {
@@ -33,5 +35,5 @@ body {
 
 .section-container {
   display: flex;
-  height: 100vh;
+  height: 90vh;
 }

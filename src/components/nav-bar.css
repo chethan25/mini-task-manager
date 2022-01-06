@@ -1,8 +1,11 @@
 .nav-bar-container {
-  width: 20vw;
+  width: 25vw;
   height: 100%;
   background-color: var(--secondary-color);
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
 }
 
 .nav-bar-form {
@@ -28,7 +31,7 @@
 }
 
 .search-input {
-  width: 100%;
+  width: 80%;
   padding: 0.5rem 1rem;
   font-size: 1em;
   border: none;
@@ -38,7 +41,7 @@
 }
 
 .nav-bar-title {
-  margin: 1.5rem 0;
+  margin: 2rem 1rem 1.5rem 1rem;
   text-transform: uppercase;
 }
 
@@ -47,7 +50,8 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  margin-left: 0.5rem;
+  margin-left: 1.5rem;
+  color: var(--primary-text-color);
 }
 
 .tasks-types-list-item-container {
