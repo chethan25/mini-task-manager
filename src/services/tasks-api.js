@@ -19,10 +19,26 @@ const getTasksList = async () => {
   }
 };
 
-// Create tasks
+// Create task
 const postNewTask = async (formdata) => {
   try {
     const response = await axios.post(`${baseUrl}/create`, formdata, {
+      headers: {
+        AuthToken: token,
+      },
+    });
+    const data = await response.data;
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// Update task
+const updateTask = async (formdata) => {
+  try {
+    const response = await axios.post(`${baseUrl}/update`, formdata, {
       headers: {
         AuthToken: token,
       },
@@ -56,4 +72,5 @@ export default {
   getTasksList,
   getUsersList,
   postNewTask,
+  updateTask,
 };

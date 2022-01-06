@@ -4,7 +4,13 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 import './main-section.css';
 
-const MainSection = ({ tasks, users, isLoading, handleModalClick }) => {
+const MainSection = ({
+  tasks,
+  users,
+  isLoading,
+  handleModalClick,
+  handleOnClickEdit,
+}) => {
   return (
     <div className="main-section">
       <div className="main-section-header-container">
@@ -47,7 +53,10 @@ const MainSection = ({ tasks, users, isLoading, handleModalClick }) => {
                   <h6 className="due-date-text">
                     {new Date(task.due_date).toDateString()}
                   </h6>
-                  <FaRegEdit className="action-icons" />
+                  <FaRegEdit
+                    className="action-icons"
+                    onClick={(e) => handleOnClickEdit(e, task.id)}
+                  />
                   <FaTrashAlt className="action-icons" />
                 </div>
               </li>

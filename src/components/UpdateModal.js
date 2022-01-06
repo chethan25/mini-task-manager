@@ -5,7 +5,7 @@ import './modal.css';
 const Modal = ({
   handleModalClick,
   users,
-  handleOnSubmit,
+  handleOnSubmitUpdate,
   handleOnChangeMessage,
   newTaskMessage,
   handleOnChangeAssign,
@@ -17,10 +17,10 @@ const Modal = ({
     <section className="modal-section">
       <div className="modal-container">
         <div className="modal-header">
-          <h3 className="modal-header-title">Create a Task</h3>
+          <h3 className="modal-header-title">Update Task</h3>
           <FaTimes className="close-icon" onClick={handleModalClick} />
         </div>
-        <form className="form-container" onSubmit={handleOnSubmit}>
+        <form className="form-container" onSubmit={handleOnSubmitUpdate}>
           <div className="task-message-container">
             <label htmlFor="message">Task Message</label>
             <input
@@ -81,7 +81,7 @@ const Modal = ({
           </div>
 
           <button className="add-btn" type="submit">
-            Add Task
+            Update Task
           </button>
         </form>
       </div>
