@@ -4,14 +4,17 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 import './main-section.css';
 
-const MainSection = ({ tasks, users, isLoading }) => {
+const MainSection = ({ tasks, users, isLoading, handleModalClick }) => {
   return (
     <div className="main-section">
       <div className="main-section-header-container">
         <div className="main-section-header-title-container">
           <h2 className="main-section-header-title">Manage Tasks</h2>
         </div>
-        <div className="main-section-header-add-task-container">
+        <div
+          className="main-section-header-add-task-container"
+          onClick={handleModalClick}
+        >
           <button className="add-task-btn" type="button">
             Add New Task
           </button>

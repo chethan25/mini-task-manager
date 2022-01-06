@@ -4,14 +4,16 @@ import TasksService from './services/tasks-api';
 
 import Navbar from './components/Navbar';
 import MainSection from './components/MainSection';
+import Modal from './components/Modal';
 
 import './App.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [users, setUsers] = useState([]);
-
   const [isLoading, setIsLoading] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     getTasks();
@@ -32,6 +34,10 @@ function App() {
     setIsLoading(false);
   };
 
+  const handleModalClick = () => {
+    setShowModal((prev) => !prev);
+  };
+
   return (
     <div className="app-container">
       <header className="header-container">
@@ -39,7 +45,15 @@ function App() {
       </header>
       <div className="section-container">
         <Navbar />
-        <MainSection tasks={tasks} users={users} isLoading={isLoading} />
+        <MainSection
+          tasks={tasks}
+          users={users}
+          isLoading={isLoading}
+          handleModalClick={handleModalClick}
+        />
+        {showModal && (
+          <Modal handleModalClick={handleModalClick} users={users} />
+        )}
       </div>
     </div>
   );

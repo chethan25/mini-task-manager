@@ -1,0 +1,114 @@
+.modal-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+  position: fixed;
+  background: white;
+  width: 50%;
+  height: 52%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  color: #fff;
+  height: 50px;
+}
+
+.modal-header-title {
+  margin-left: 1rem;
+}
+
+.close-icon {
+  margin-right: 1rem;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.form-container {
+  height: 80%;
+  background-color: #f7f7f7;
+  padding: 1rem;
+}
+
+.task-message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-input {
+  width: 70%;
+  padding: 0.3rem;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.task-assign-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.assign-select {
+  width: 30%;
+  padding: 0.3rem;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.task-priority-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.priority-select {
+  width: 30%;
+  padding: 0.3rem;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.task-due-date-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-input {
+  width: 30%;
+  padding: 0.3rem;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.add-btn {
+  float: right;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  filter: brightness(95%);
+}
