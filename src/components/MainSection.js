@@ -10,6 +10,7 @@ const MainSection = ({
   isLoading,
   handleModalClick,
   handleOnClickEdit,
+  hadnleOnClickDelete,
 }) => {
   return (
     <div className="main-section">
@@ -57,7 +58,10 @@ const MainSection = ({
                     className="action-icons"
                     onClick={(e) => handleOnClickEdit(e, task.id)}
                   />
-                  <FaTrashAlt className="action-icons" />
+                  <FaTrashAlt
+                    className="action-icons"
+                    onClick={(e) => hadnleOnClickDelete(e, task.id)}
+                  />
                 </div>
               </li>
             ))
@@ -68,5 +72,4 @@ const MainSection = ({
   );
 };
 
-// user.id === task.assigned_to;
 export default MainSection;

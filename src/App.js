@@ -122,8 +122,8 @@ function App() {
     formdata.append('assigned_to', newTaskAssignTo);
     formdata.append('taskid', taskId);
 
-    const newTaskResponse = await TasksService.updateTask(formdata);
-    console.log(newTaskResponse);
+    const updateTaskResponse = await TasksService.updateTask(formdata);
+    console.log(updateTaskResponse);
 
     getTasks();
 
@@ -133,6 +133,16 @@ function App() {
     setNewTaskDueDate('');
     handleOnClickEdit();
     setNewTaskDueTime('');
+  };
+
+  const hadnleOnClickDelete = async (e, id) => {
+    let formdata = new FormData();
+    formdata.append('taskid', id);
+
+    const deleteTaskResponse = await TasksService.deleteTask(formdata);
+    console.log(deleteTaskResponse);
+
+    getTasks();
   };
 
   return (
@@ -148,6 +158,7 @@ function App() {
           isLoading={isLoading}
           handleModalClick={handleModalClick}
           handleOnClickEdit={handleOnClickEdit}
+          hadnleOnClickDelete={hadnleOnClickDelete}
         />
         {showModal && (
           <Modal

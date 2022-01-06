@@ -51,6 +51,22 @@ const updateTask = async (formdata) => {
   }
 };
 
+// Delete task
+const deleteTask = async (formdata) => {
+  try {
+    const response = await axios.post(`${baseUrl}/delete`, formdata, {
+      headers: {
+        AuthToken: token,
+      },
+    });
+    const data = await response.data;
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // List users
 const getUsersList = async () => {
   try {
@@ -73,4 +89,5 @@ export default {
   getUsersList,
   postNewTask,
   updateTask,
+  deleteTask,
 };
