@@ -3,7 +3,7 @@ import axios from 'axios';
 const baseUrl = 'https://devza.com/tests/tasks';
 const token = 'UrM4YHgb1FcqEf1tuKwmAMMX5MxFZ12a';
 
-// List Tasks
+// List tasks
 const getTasksList = async () => {
   try {
     const response = await axios.get(`${baseUrl}/list`, {
@@ -19,7 +19,23 @@ const getTasksList = async () => {
   }
 };
 
-// List Users
+// Create tasks
+const postNewTask = async (formdata) => {
+  try {
+    const response = await axios.post(`${baseUrl}/create`, formdata, {
+      headers: {
+        AuthToken: token,
+      },
+    });
+    const data = await response.data;
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// List users
 const getUsersList = async () => {
   try {
     const response = await axios.get(`${baseUrl}/listusers`, {
@@ -39,4 +55,5 @@ const getUsersList = async () => {
 export default {
   getTasksList,
   getUsersList,
+  postNewTask,
 };

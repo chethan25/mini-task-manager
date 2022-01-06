@@ -2,7 +2,17 @@ import { FaTimes } from 'react-icons/fa';
 
 import './modal.css';
 
-const Modal = ({ handleModalClick, users }) => {
+const Modal = ({
+  handleModalClick,
+  users,
+  addTask,
+  handleOnChangeMessage,
+  newTaskMessage,
+  handleOnChangeAssign,
+  handleOnChangePriority,
+  handleOnChangeDueDate,
+  handleOnChangeDueTime,
+}) => {
   return (
     <section className="modal-section">
       <div className="modal-container">
@@ -10,39 +20,67 @@ const Modal = ({ handleModalClick, users }) => {
           <h3 className="modal-header-title">Create a Task</h3>
           <FaTimes className="close-icon" onClick={handleModalClick} />
         </div>
-        <form className="form-container">
+        <form className="form-container" onSubmit={addTask}>
           <div className="task-message-container">
-            <label for="message">Task Message</label>
+            <label htmlFor="message">Task Message</label>
             <input
               className="message-input"
               type="text"
               name="message"
               placeholder="Learn React"
+              onChange={handleOnChangeMessage}
+              value={newTaskMessage}
             />
           </div>
           <div className="task-assign-container">
-            <label for="assign">Assign To</label>
-            <select className="assign-select" name="assign">
+            <label htmlFor="assign">Assign To</label>
+            <select
+              className="assign-select"
+              name="assign"
+              onChange={handleOnChangeAssign}
+            >
               {users.map((user) => (
-                <option key={user.id} value={user.name}>
+                <option key={user.id} value={user.id}>
                   {user.name}
                 </option>
               ))}
             </select>
           </div>
           <div className="task-priority-container">
-            <label for="priority">Priority</label>
-            <select className="priority-select" name="priority">
+            <label htmlFor="priority">Priority</label>
+            <select
+              className="priority-select"
+              name="priority"
+              onChange={handleOnChangePriority}
+            >
               <option value="3">High</option>
               <option value="2">Mediun</option>
               <option value="1">Low</option>
             </select>
           </div>
-          <div className="task-due-date-container">
-            <label for="due-date">Due Date</label>
-            <input className="date-input" name="due-date" type="date" />
+          <div className="task-due-date-time-container">
+            <div className="task-due-date-container">
+              <label htmlFor="due-date">Due Date</label>
+              <input
+                className="date-input"
+                name="due-date"
+                type="date"
+                onChange={handleOnChangeDueDate}
+              />
+            </div>
+            <div className="task-due-time-container">
+              <label htmlFor="due-time">Due Time</label>
+              <input
+                className="time-input"
+                name="due-time"
+                type="time"
+                step="1"
+                onChange={handleOnChangeDueTime}
+              />
+            </div>
           </div>
-          <button className="add-btn" type="button">
+
+          <button className="add-btn" type="submit">
             Add Task
           </button>
         </form>

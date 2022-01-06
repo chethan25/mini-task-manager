@@ -11,7 +11,7 @@
   position: fixed;
   background: white;
   width: 50%;
-  height: 52%;
+  max-height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -37,7 +37,7 @@
 }
 
 .form-container {
-  height: 80%;
+  height: 200%;
   background-color: #f7f7f7;
   padding: 1rem;
 }
@@ -83,14 +83,38 @@
   outline: none;
 }
 
+.task-due-date-time-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 80%;
+}
+
 .task-due-date-container {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  width: 37%;
 }
 
 .date-input {
-  width: 30%;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.task-due-time-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-left: 4rem;
+}
+
+.time-input {
+  width: 100%;
   padding: 0.3rem;
   font-size: 1em;
   margin-top: 0.5rem;
@@ -107,6 +131,7 @@
   font-size: 1em;
   font-weight: 600;
   cursor: pointer;
+  margin: 0 0.2rem 1rem 0;
 }
 
 .add-btn:hover {
