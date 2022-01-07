@@ -6,7 +6,16 @@ import { FcLowPriority } from 'react-icons/fc';
 
 import './nav-bar.css';
 
-const Navbar = () => {
+const Navbar = ({
+  handleOnClickAllTasks,
+  handleOnClickHighTasks,
+  handleOnClickMidTasks,
+  handleOnClickLowTasks,
+  allTasksSelected,
+  highTasksSelected,
+  MidTasksSelected,
+  lowTasksSelected,
+}) => {
   return (
     <nav className="nav-bar-container">
       <form className="nav-bar-form">
@@ -22,19 +31,43 @@ const Navbar = () => {
       </form>
       <h4 className="nav-bar-title">Your Tasks</h4>
       <ul className="tasks-types-list">
-        <div className="tasks-types-list-item-container">
+        <div
+          className={
+            (allTasksSelected ? 'selected' : '') +
+            ' tasks-types-list-item-container'
+          }
+          onClick={handleOnClickAllTasks}
+        >
           <FaTasks className="nav-bar-list-icons" />
           <li className="tasks-types-list-item">All Tasks</li>
         </div>
-        <div className="tasks-types-list-item-container">
+        <div
+          className={
+            (highTasksSelected ? 'selected' : '') +
+            ' tasks-types-list-item-container'
+          }
+          onClick={handleOnClickHighTasks}
+        >
           <FcHighPriority className="nav-bar-list-icons" />
           <li className="tasks-types-list-item">High Priority Tasks</li>
         </div>
-        <div className="tasks-types-list-item-container">
+        <div
+          className={
+            (MidTasksSelected ? 'selected' : '') +
+            ' tasks-types-list-item-container'
+          }
+          onClick={handleOnClickMidTasks}
+        >
           <FcMediumPriority className="nav-bar-list-icons" />
           <li className="tasks-types-list-item">Medium Priority Tasks</li>
         </div>
-        <div className="tasks-types-list-item-container">
+        <div
+          className={
+            (lowTasksSelected ? 'selected' : '') +
+            ' tasks-types-list-item-container'
+          }
+          onClick={handleOnClickLowTasks}
+        >
           <FcLowPriority className="nav-bar-list-icons" />
           <li className="tasks-types-list-item">Low Priority Tasks</li>
         </div>

@@ -26,6 +26,12 @@ function App() {
 
   const [taskId, setTaskId] = useState('');
 
+  // Task Priority
+  const [allTasksSelected, setAllTasksSelected] = useState(true);
+  const [highTasksSelected, setHighTasksSelected] = useState(false);
+  const [MidTasksSelected, setMidTasksSelected] = useState(false);
+  const [lowTasksSelected, setLowTasksSelected] = useState(false);
+
   useEffect(() => {
     getTasks();
     getUsers();
@@ -163,13 +169,70 @@ function App() {
     }
   };
 
+  // Sort by priority
+  const handleOnClickAllTasks = () => {
+    setAllTasksSelected(true);
+    setHighTasksSelected(false);
+    setMidTasksSelected(false);
+    setLowTasksSelected(false);
+
+    getTasks();
+  };
+
+  const handleOnClickHighTasks = () => {
+    setHighTasksSelected(true);
+    setAllTasksSelected(false);
+    setMidTasksSelected(false);
+    setLowTasksSelected(false);
+
+    const highPriorityTasks = [...tasks];
+    highPriorityTasks.sort((a, b) => b.priority - a.priority);
+    setTasks(highPriorityTasks);
+  };
+
+  const handleOnClickMidTasks = () => {
+    setMidTasksSelected(true);
+    setAllTasksSelected(false);
+    setHighTasksSelected(false);
+    setLowTasksSelected(false);
+
+    const MidPriorityTasks = [...tasks];
+
+    let sortOrder = ['2', '3', '1'];
+    MidPriorityTasks.sort(function (a, b) {
+      return sortOrder.indexOf(a.priority) - sortOrder.indexOf(b.priority);
+    });
+
+    setTasks(MidPriorityTasks);
+  };
+
+  const handleOnClickLowTasks = () => {
+    setLowTasksSelected(true);
+    setAllTasksSelected(false);
+    setHighTasksSelected(false);
+    setMidTasksSelected(false);
+
+    const lowPriorityTasks = [...tasks];
+    lowPriorityTasks.sort((a, b) => a.priority - b.priority);
+    setTasks(lowPriorityTasks);
+  };
+
   return (
     <div className="app-container">
       <header className="header-container">
         <h1 className="header-title">Task Manager</h1>
       </header>
       <div className="section-container">
-        <Navbar />
+        <Navbar
+          handleOnClickAllTasks={handleOnClickAllTasks}
+          handleOnClickHighTasks={handleOnClickHighTasks}
+          handleOnClickMidTasks={handleOnClickMidTasks}
+          handleOnClickLowTasks={handleOnClickLowTasks}
+          allTasksSelected={allTasksSelected}
+          highTasksSelected={highTasksSelected}
+          MidTasksSelected={MidTasksSelected}
+          lowTasksSelected={lowTasksSelected}
+        />
         <MainSection
           tasks={tasks}
           users={users}

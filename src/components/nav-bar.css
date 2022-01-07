@@ -63,6 +63,10 @@
   border-radius: 0.2rem;
 }
 
+.tasks-types-list-item-container.selected {
+  background-color: #ccc;
+}
+
 .tasks-types-list-item-container:hover {
   background-color: #ccc;
 }

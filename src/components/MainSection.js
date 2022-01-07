@@ -20,7 +20,7 @@ const MainSection = ({
           <h2 className="main-section-header-title">Manage Tasks</h2>
         </div>
         <div className="main-section-header-sort-date-container">
-          <label htmlFor="sort-date">Sort By</label>
+          <label htmlFor="sort-date">Sort by Due Date</label>
           <select
             className="sort-date-select"
             name="sort-date"
@@ -29,7 +29,7 @@ const MainSection = ({
             <option value="default" defaultValue>
               Default
             </option>
-            <option value="recent">Recent</option>
+            <option value="recent">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
         </div>
@@ -46,7 +46,7 @@ const MainSection = ({
         <ul className="tasks-list">
           {isLoading ? (
             <div className="tail-spin-loader-container">
-              <Loader type="TailSpin" height={60} width={60} color="#c38d9e" />
+              <Loader type="TailSpin" height={55} width={55} color="#c38d9e" />
             </div>
           ) : (
             tasks.map((task) => (
