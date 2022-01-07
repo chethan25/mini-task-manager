@@ -21,6 +21,19 @@
   font-weight: 500;
 }
 
+.main-section-header-sort-date-container {
+  margin-left: 30rem;
+  display: flex;
+  align-items: center;
+}
+
+.sort-date-select {
+  padding: 0.2rem 0.5rem;
+  margin-left: 1rem;
+  outline: none;
+  border-radius: 0.2rem;
+}
+
 .main-section-header-add-task-container {
   padding: 0 2rem;
 }
@@ -81,18 +94,21 @@
 }
 
 .task-message-text {
-  width: 55%;
+  width: 53%;
   color: var(--primary-text-color);
 }
 
 .task-assigned-text {
-  min-width: 8%;
+  width: 12%;
+  font-size: 0.9em;
+  color: #501f3a;
 }
 
 .due-date-text {
   width: 12%;
   font-size: 0.8em;
-  font-weight: 400;
+  font-weight: 500;
+  color: #501f3a;
 }
 
 .action-icons {

@@ -11,12 +11,27 @@ const MainSection = ({
   handleModalClick,
   handleOnClickEdit,
   hadnleOnClickDelete,
+  handleOnChangeSortBy,
 }) => {
   return (
     <div className="main-section">
       <div className="main-section-header-container">
         <div className="main-section-header-title-container">
           <h2 className="main-section-header-title">Manage Tasks</h2>
+        </div>
+        <div className="main-section-header-sort-date-container">
+          <label htmlFor="sort-date">Sort By</label>
+          <select
+            className="sort-date-select"
+            name="sort-date"
+            onChange={handleOnChangeSortBy}
+          >
+            <option value="default" defaultValue>
+              Default
+            </option>
+            <option value="recent">Recent</option>
+            <option value="oldest">Oldest</option>
+          </select>
         </div>
         <div
           className="main-section-header-add-task-container"

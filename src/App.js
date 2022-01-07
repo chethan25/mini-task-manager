@@ -76,6 +76,7 @@ function App() {
     setNewTaskDueTime(e.target.value);
   };
 
+  // Add Task
   const addTask = async (e) => {
     e.preventDefault();
 
@@ -98,6 +99,7 @@ function App() {
     setNewTaskDueTime();
   };
 
+  // Update Task
   const handleOnClickEdit = (e, id) => {
     setShowUpdateModal((prev) => !prev);
     setTaskId(id);
@@ -135,6 +137,7 @@ function App() {
     setNewTaskDueTime('');
   };
 
+  // Delete Task
   const hadnleOnClickDelete = async (e, id) => {
     let formdata = new FormData();
     formdata.append('taskid', id);
@@ -143,6 +146,21 @@ function App() {
     console.log(deleteTaskResponse);
 
     getTasks();
+  };
+
+  // Sort by date
+  const handleOnChangeSortBy = (e) => {
+    if (e.target.value === 'recent') {
+      const sortByRecent = [...tasks];
+      sortByRecent.sort((a, b) => new Date(b.due_date) - new Date(a.due_date));
+      setTasks(sortByRecent);
+    } else if (e.target.value === 'oldest') {
+      const sortByOldest = [...tasks];
+      sortByOldest.sort((a, b) => new Date(a.due_date) - new Date(b.due_date));
+      setTasks(sortByOldest);
+    } else {
+      getTasks();
+    }
   };
 
   return (
@@ -159,6 +177,7 @@ function App() {
           handleModalClick={handleModalClick}
           handleOnClickEdit={handleOnClickEdit}
           hadnleOnClickDelete={hadnleOnClickDelete}
+          handleOnChangeSortBy={handleOnChangeSortBy}
         />
         {showModal && (
           <Modal
