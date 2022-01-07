@@ -15,6 +15,8 @@ const Navbar = ({
   highTasksSelected,
   MidTasksSelected,
   lowTasksSelected,
+  handleSearchInput,
+  searchInput,
 }) => {
   return (
     <nav className="nav-bar-container">
@@ -27,6 +29,8 @@ const Navbar = ({
           className="search-input"
           type="text"
           placeholder="Search tasks"
+          onChange={handleSearchInput}
+          value={searchInput}
         />
       </form>
       <h4 className="nav-bar-title">Your Tasks</h4>

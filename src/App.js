@@ -32,6 +32,9 @@ function App() {
   const [MidTasksSelected, setMidTasksSelected] = useState(false);
   const [lowTasksSelected, setLowTasksSelected] = useState(false);
 
+  // Search Task
+  const [searchInput, setSearchInput] = useState('');
+
   useEffect(() => {
     getTasks();
     getUsers();
@@ -217,6 +220,18 @@ function App() {
     setTasks(lowPriorityTasks);
   };
 
+  // Search Tasks
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value);
+
+    const searchTasks = [...tasks];
+    const searchResults = searchTasks.filter((task) =>
+      task.message.toLowerCase().includes(searchInput.toLowerCase())
+    );
+
+    setTasks(searchResults);
+  };
+
   return (
     <div className="app-container">
       <header className="header-container">
@@ -232,6 +247,8 @@ function App() {
           highTasksSelected={highTasksSelected}
           MidTasksSelected={MidTasksSelected}
           lowTasksSelected={lowTasksSelected}
+          handleSearchInput={handleSearchInput}
+          searchInput={searchInput}
         />
         <MainSection
           tasks={tasks}
