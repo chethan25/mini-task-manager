@@ -48,7 +48,7 @@ const MainSection = ({
             <div className="tail-spin-loader-container">
               <Loader type="TailSpin" height={55} width={55} color="#c38d9e" />
             </div>
-          ) : (
+          ) : tasks.length > 0 ? (
             tasks.map((task) => (
               <li key={task.id}>
                 <div
@@ -80,6 +80,8 @@ const MainSection = ({
                 </div>
               </li>
             ))
+          ) : (
+            <h3>No Tasks To Show</h3>
           )}
         </ul>
       </div>
