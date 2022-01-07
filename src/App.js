@@ -206,6 +206,9 @@ function App() {
 
     // Fetch all tasks
     getTasks();
+
+    // Set search input to empty
+    setSearchInput('');
   };
 
   // High priority tasks
@@ -267,6 +270,14 @@ function App() {
     setTasks(searchResults);
   };
 
+  // Prevent default form action
+  // Set search input to empty
+  const handleOnSubmitSearch = (e) => {
+    e.preventDefault();
+
+    setSearchInput('');
+  };
+
   return (
     <div className="app-container">
       <header className="header-container">
@@ -284,6 +295,7 @@ function App() {
           lowTasksSelected={lowTasksSelected}
           handleSearchInput={handleSearchInput}
           searchInput={searchInput}
+          handleOnSubmitSearch={handleOnSubmitSearch}
         />
         <MainSection
           tasks={tasks}

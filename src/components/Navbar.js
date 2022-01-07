@@ -17,10 +17,11 @@ const Navbar = ({
   lowTasksSelected,
   handleSearchInput,
   searchInput,
+  handleOnSubmitSearch,
 }) => {
   return (
     <nav className="nav-bar-container">
-      <form className="nav-bar-form">
+      <form className="nav-bar-form" onSubmit={handleOnSubmitSearch}>
         <div className="search-icon-container">
           <FaSearch className="fa-search" />
         </div>
